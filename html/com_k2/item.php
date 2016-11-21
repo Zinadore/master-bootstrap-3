@@ -316,22 +316,6 @@ defined('_JEXEC') or die;
 		}
 	?>	
 
-	<div class="overlay overlay-door">
-		<button type="button" class="overlay-close">Close</button>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Work</a></li>
-				<li><a href="#">Clients</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</div>
-	<script src="/templates/bookbookmobile/js/book_view/modernizr.custom.js"></script>
-	<script src="/templates/bookbookmobile/js/book_view/classie.js"></script>
-	<script src="/templates/bookbookmobile/js/book_view/demo1.js"></script>
-
 	<!--ITEM CONTENT ROW-->
 	<div class="item_content row">
 		<div class="container">
