@@ -25,6 +25,7 @@ include 'includes/params.php';
 
       <!-- wrapper for the main, unique content for each page -->
       <div class="container">
+      		<jdoc:include type="modules" name="debug" />
           <jdoc:include type="component" /> <!-- main content -->
 
   	      <jdoc:include type="modules" name="editorsChoise" /> <!--replace with our own-->
@@ -36,7 +37,7 @@ include 'includes/params.php';
 
 
 
-<jdoc:include type="modules" name="debug" />
+
 </section>
 <!-- page -->
 <!-- JS -->
