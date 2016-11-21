@@ -10,6 +10,7 @@
 	$params = JFactory::getApplication()->getTemplate(true)->params;
 	$app = JFactory::getApplication();
 	$doc = JFactory::getDocument();
+	$doc->setHtml5(true);
 	// Column widths
 	$leftcolgrid = ($this->countModules('left') == 0) ? 0 :
 	$this->params->get('leftColumnWidth', 3);
