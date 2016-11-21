@@ -8,6 +8,12 @@
  */
 // no direct access
 defined('_JEXEC') or die;
+
+$doc = JFactory::getDocument();
+//  load JS for twitter's button
+if($this->item->params->get('itemTwitterButton',1)) {
+	$doc->addScript("//platform.twitter.com/widgets.js");
+}
 ?>
 
 <?php if(JRequest::getInt('print')==1): ?>
@@ -43,8 +49,8 @@ defined('_JEXEC') or die;
 			<?php
             	$today = getdate();
             	$days = unixtojd($today[0]) - unixtojd(strtotime($this->item->created));
-            ?> 	
-        	
+            ?>
+
 			<h2 class="item_title">
 				<?php if ($days < 8000): ?>
                 	<?php echo ("<img class='new_img' alt='Νέο βιβλίο' src='/images/books_icons/new_badge.png' />"); ?>
@@ -159,7 +165,7 @@ defined('_JEXEC') or die;
 											<?php endif; ?>
 										<?php endforeach; ?>
 									</li>
-									
+
 								<?php elseif ($extraField->name == "Εκδότης" && ($useful_value[0] !== "http://")): ?>
 									<li id="publisher_info" class="info_item" itemprop="publisher">
 										<span class="info_value">
@@ -298,23 +304,23 @@ defined('_JEXEC') or die;
 		function pagesLoader($book_id) {
     		// Get a db connection.
 			$db = JFactory::getDbo();
-			
+
 			// Create a new query object.
 			$query = $db->getQuery(true);
-			
+
 			// Select all records from the user profile table where key begins with "custom.".
 			// Order it by the ordering field.
 			$query->select($db->quoteName(array('file')));
 			$query->from($db->quoteName('j25_flippingbook_pages'));
 			$query->where($db->quoteName('book_id') . '= 461');
-			
+
 			// Reset the query using our newly populated query object.
 			$db->setQuery($query);
-			
+
 			// Load the results as a list of stdClass objects (see later for more options on retrieving data).
 			return $db->loadObjectList();
 		}
-	?>	
+	?>
 
 	<!--ITEM CONTENT ROW-->
 	<div class="item_content row">
@@ -357,7 +363,6 @@ defined('_JEXEC') or die;
 					<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal"<?php if($this->item->params->get('twitterUsername')): ?> data-via="<?php echo $this->item->params->get('twitterUsername'); ?>"<?php endif; ?>>
 						<?php echo JText::_('K2_TWEET'); ?>
 					</a>
-					<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 				</div>
 				<?php endif; ?>
 
