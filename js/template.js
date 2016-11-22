@@ -1,9 +1,11 @@
+var toggleSidenav = function () {
+    jQuery(".wrapper").toggleClass("toggled");
+    jQuery("body").toggleClass("noscroll");
+    jQuery("#sidenav-overlay").toggleClass("hidden-animated");	
+}
+
 jQuery("#menu-toggle").click(function(e) {
-     e.preventDefault();
-     jQuery(".wrapper").toggleClass("toggled");
-     
-     jQuery("body").toggleClass("noscroll");
-     jQuery("#sidenav-overlay").toggleClass("hidden-animated");
+	toggleSidenav();
  });
 
  jQuery('.sidebar-dropdown-toggle').on('click', function () {
@@ -11,3 +13,7 @@ jQuery("#menu-toggle").click(function(e) {
   
    toggle.siblings('.sidebar-dropdown-menu').first().toggleClass('open');
  });
+
+jQuery('#sidenav-overlay').on('click' , function () {
+	toggleSidenav();
+});

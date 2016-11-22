@@ -161,11 +161,18 @@
 
 #sidenav-overlay.hidden-animated {
     opacity: 0;
-    display: none;  
     height: 0;
 }
 
 
 #wrapper.toggled > nav#sidebar-wrapper {
     box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 40px 30px 5px rgba(0,0,0,0.12),0 8px 10px -5px rgba(0,0,0,0.3);    
+}
+
+.drag-target {
+    height: 100%;
+    width: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 998;    
 }

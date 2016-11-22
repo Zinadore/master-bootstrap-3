@@ -32,6 +32,7 @@ include 'includes/params.php';
   	      <jdoc:include type="modules" name="mostVisitedArticle" /> <!--replace with our own-->
 	    </div>
 	    <div id="sidenav-overlay" class="hidden-animated"></div>
+      <div class="drag-target" data-sidenav="slide-out" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); left: 0px;"></div>
     </div>
   </div>
 
