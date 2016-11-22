@@ -10,10 +10,13 @@ header {
     background-color: white;
     border: 0;
     -webkit-box-shadow: none;
-    box-shadow: none;    
+    box-shadow: none;  
+    padding: 3px 6px;  
 
     i.fa-bars {
       font-size: 1.8rem;
+      padding: 3px 6px;
+      border-radius: 50%;
     }    
   }
 
@@ -36,4 +39,12 @@ header {
     }
 
   }
+}
+
+#menu-toggle:focus {
+  outline: none;
+}
+
+body.noscroll > header > #menu-toggle i {
+    background-color: rgb(220, 221, 222);
 }

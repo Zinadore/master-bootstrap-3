@@ -5954,9 +5954,12 @@ header {
     background-color: white;
     border: 0;
     -webkit-box-shadow: none;
-    box-shadow: none; }
+    box-shadow: none;
+    padding: 3px 6px; }
     header #menu-toggle i.fa-bars {
-      font-size: 1.8rem; }
+      font-size: 1.8rem;
+      padding: 3px 6px;
+      border-radius: 50%; }
   header button {
     border-radius: 0 !important; }
   header span {
@@ -5968,6 +5971,12 @@ header {
       color: black;
       padding: 5px;
       font-size: 1.8em; }
+
+#menu-toggle:focus {
+  outline: none; }
+
+body.noscroll > header > #menu-toggle i {
+  background-color: #dcddde; }
 
 html {
   font-size: 16px; }
