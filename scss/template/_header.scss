@@ -4,6 +4,10 @@ header {
   //border-bottom: 1px solid black;
   width: 100%;
   height: $navbar-height; // found in template/variables
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  background: white;
 
   #menu-toggle {
     border: 0;

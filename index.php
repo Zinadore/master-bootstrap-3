@@ -23,7 +23,7 @@ include 'includes/params.php';
 
     <div id="page-content-wrapper">
 
-      <img id="header-image" src="images/mobile_version/bookbook-mobile_768.png" class="img-responsive">
+      <img id="header-image" src="templates/bookbookmobile/images/mobile_version/bookbook-mobile_1024.png" class="img-responsive">
 
       <!-- wrapper for the main, unique content for each page -->
       <div class="container">

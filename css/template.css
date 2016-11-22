@@ -5996,7 +5996,11 @@ header {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 45px; }
+  height: 45px;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  background: white; }
   header #menu-toggle {
     border: 0;
     background-color: white;
@@ -6045,6 +6049,9 @@ p.readmore > a {
 #header-image {
   width: 100%;
   padding-bottom: 20px; }
+
+#page-content-wrapper {
+  padding-top: 45px; }
 
 .flexbox {
   display: flex;
