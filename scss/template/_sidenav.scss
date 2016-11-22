@@ -69,10 +69,27 @@
     line-height: $sidebar-li-line-height;
 }
 
+.sidebar-nav > li:before   {
+    content: "•";
+    color: red;
+    font-size: $sidebar-font-size-circles;
+    position: absolute;
+    left: 16px;        
+}
+
+ul.sidebar-dropdown-menu > li:before {
+    content: "•";
+    color: red;
+    font-size: $sidebar-font-size-circles;
+    position: absolute;
+    left: 34px;  
+}
+
 .sidebar-nav li a {
-    display: block;
+    //display: block;
     text-decoration: none;
     color: black;
+    padding-left: 40px;
 }
 
 .sidebar-nav li a:hover {
@@ -175,4 +192,25 @@
     position: fixed;
     top: 0;
     z-index: 998;    
+}
+
+// Different colors for circles
+ul.sidebar-nav {
+
+    li.item-128:before { color: #c90119; }
+
+    li.item-129:before { color: #edba00; }
+
+    li.item-130:before { color: #137aae; }
+
+    li.item-131:before { color: #5504b2; }  // biblia pou...   
+
+    li.item-131 > ul.sidebar-dropdown-menu {
+
+        & > li.item-132:before { color: #b3007b; } // biblia pou diavazontai
+        & > li.item-133:before { color: #e64215; } // biblia pou akougontai
+        & > li.item-134:before { color: #b3007b; } // biblia pou ksefilizontai
+        & > li.item-135:before { color: #7cb4d6; } // biblia pou ksexarisame
+        & > li.item-136:before { color: #97b801; } // biblia pou agapisame
+    } 
 }
