@@ -16,12 +16,13 @@ include 'includes/params.php';
 <html lang="en">
 <?php
  include 'includes/head.php'; ?>
-<body>
+<body id="body">
+      <?php include 'blocks/header.php'; ?>
   <div id="wrapper" class="wrapper">
     <?php include 'blocks/sidenav.php'; ?>
 
     <div id="page-content-wrapper">
-      <?php include 'blocks/header.php'; ?>
+
 
       <!-- wrapper for the main, unique content for each page -->
       <div class="container">
@@ -30,7 +31,7 @@ include 'includes/params.php';
   	      <jdoc:include type="modules" name="editorsChoise" /> <!--replace with our own-->
   	      <jdoc:include type="modules" name="mostVisitedArticle" /> <!--replace with our own-->
 	    </div>
-
+	    <div id="sidenav-overlay" class="hidden-animated"></div>
     </div>
   </div>
 

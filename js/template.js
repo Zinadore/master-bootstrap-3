@@ -1,6 +1,9 @@
 jQuery("#menu-toggle").click(function(e) {
      e.preventDefault();
      jQuery(".wrapper").toggleClass("toggled");
+     
+     jQuery("body").toggleClass("noscroll");
+     jQuery("#sidenav-overlay").toggleClass("hidden-animated");
  });
 
  jQuery('.sidebar-dropdown-toggle').on('click', function () {

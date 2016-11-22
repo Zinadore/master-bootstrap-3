@@ -5830,9 +5830,6 @@ body {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-#wrapper.toggled {
-  padding-left: 250px; }
-
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
@@ -5925,11 +5922,33 @@ body {
     max-height: 100%;
     overflow-y: visible; }
 
+#sidenav-overlay {
+  position: fixed;
+  top: 45px;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+  will-change: opacity;
+  opacity: 100%;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease; }
+
+.hidden-animated {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease; }
+
 header {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid black;
-  width: 100%; }
+  width: 100%;
+  height: 45px; }
   header #menu-toggle {
     border: 0;
     background-color: white;
@@ -5962,6 +5981,9 @@ p.readmore > a {
   text-align: initial;
   border: 0;
   padding: 0; }
+
+.noscroll {
+  overflow-y: hidden; }
 
 .flexbox {
   display: flex;

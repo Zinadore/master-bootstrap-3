@@ -1,8 +1,9 @@
 header {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid black;
+  //border-bottom: 1px solid black;
   width: 100%;
+  height: $navbar-height; // found in template/variables
 
   #menu-toggle {
     border: 0;

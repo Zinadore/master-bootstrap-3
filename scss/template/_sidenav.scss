@@ -18,9 +18,9 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-    padding-left: 250px;
-}
+// #wrapper.toggled {
+//     padding-left: 250px;
+// }
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -140,4 +140,28 @@
     max-height: 100%;
     overflow-y: visible;
   }
+}
+
+#sidenav-overlay {
+    position: fixed;
+    top: $navbar-height; // found in template/variables
+    left: 0;
+    right: 0;
+    height: 120vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 997;
+    will-change: opacity;
+    opacity: 100%;
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;    
+}
+
+.hidden-animated {
+    opacity: 0;
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
 }
