@@ -1,54 +1,73 @@
 header {
-  display: flex;
-  flex-direction: row;
-  //border-bottom: 1px solid black;
-  width: 100%;
-  height: $navbar-height; // found in template/variables
-  position: fixed;
-  top: 0;
-  z-index: 2000;
-  background: white;
+	display: flex;
+	flex-direction: row;
+	//border-bottom: 1px solid black;
+	width: 100%;
+	height: $navbar-height; // found in template/variables
+	position: fixed;
+	top: 0;
+	z-index: 2000;
+	background: white;
 
-  #menu-toggle {
-    border: 0;
-    background-color: white;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;  
-    padding: 3px 6px;  
+	#menu-toggle {
+		border: 0;
+		background-color: white;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;  
+		padding: 3px 6px;  
 
-    i.fa-bars {
-      font-size: 1.8rem;
-      padding: 3px 6px;
-      border-radius: 50%;
-    }    
-  }
+		i.fa-bars {
+			font-size: 1.8rem;
+			padding: 3px 6px;
+			border-radius: 50%;
+		}    
+	}
 
-  button {
-    border-radius: 0!important;
-  }
+  	button {
+		border-radius: 0!important;
+  	}
 
-  span {
-    flex: 1;
-  }
+	span {
+		flex: 1;
+  	}
 
-  .right-menu {
-    display: flex;
-    flex-direction: row;
+  	.right-menu {
+		display: flex;
+		flex-direction: row;
 
-    a {
-      color: black;
-      padding: 5px;
-      font-size: 1.8em;
-    }
-
+	a {
+		color: black;
+		padding: 5px;
+		font-size: 1.8em;
+	}
   }
 }
 
 #menu-toggle:focus {
-  outline: none;
+	outline: none;
 }
 
 body.noscroll > header > #menu-toggle i {
-    background-color: rgb(220, 221, 222);
+	background-color: rgb(220, 221, 222);
+}
+
+#navbar-logo {
+	@media (max-width: 440px) {
+		max-width: 50%;
+	}
+  /* Small devices (tablets, 768px and up) */
+	@media (min-width: $screen-sm-min) {
+		max-width: 254px;     
+	}
+
+  /* Medium devices (desktops, 992px and up) */
+	@media (min-width: $screen-md-min) {
+		max-width: 254px;     
+	}
+
+  /* Large devices (large desktops, 1200px and up) */
+	@media (min-width: $screen-lg-min) {
+		max-width: 254px; 
+	}
 }

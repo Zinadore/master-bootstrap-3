@@ -6030,6 +6030,23 @@ header {
 body.noscroll > header > #menu-toggle i {
   background-color: #dcddde; }
 
+#navbar-logo {
+  /* Small devices (tablets, 768px and up) */
+  /* Medium devices (desktops, 992px and up) */
+  /* Large devices (large desktops, 1200px and up) */ }
+  @media (max-width: 440px) {
+    #navbar-logo {
+      max-width: 50%; } }
+  @media (min-width: 768px) {
+    #navbar-logo {
+      max-width: 254px; } }
+  @media (min-width: 992px) {
+    #navbar-logo {
+      max-width: 254px; } }
+  @media (min-width: 1200px) {
+    #navbar-logo {
+      max-width: 254px; } }
+
 html {
   font-size: 16px; }
 
