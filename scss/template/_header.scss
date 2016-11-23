@@ -36,12 +36,12 @@ header {
 		display: flex;
 		flex-direction: row;
 
-	a {
-		color: black;
-		padding: 5px;
-		font-size: 1.8em;
-	}
-  }
+		a {
+			color: black;
+			padding: 5px;
+			font-size: 1.8em;
+		}
+  	}
 }
 
 #menu-toggle:focus {
@@ -53,6 +53,9 @@ body.noscroll > header > #menu-toggle i {
 }
 
 #navbar-logo {
+	opacity: 0;
+	transition: opacity 0.5s ease;
+
 	@media (max-width: 440px) {
 		max-width: 50%;
 	}
@@ -70,4 +73,8 @@ body.noscroll > header > #menu-toggle i {
 	@media (min-width: $screen-lg-min) {
 		max-width: 254px; 
 	}
+}
+
+header.affix > img#navbar-logo {
+	opacity: 1;
 }
