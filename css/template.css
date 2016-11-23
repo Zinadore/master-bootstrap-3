@@ -6070,7 +6070,29 @@ p.readmore > a {
 
 #header-image {
   width: 100%;
-  padding-bottom: 20px; }
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 77px;
+  background-image: url("../images/mobile_version/bookbook-mobile_320.png");
+  /* Small devices (tablets, 768px and up) */
+  /* Medium devices (desktops, 992px and up) */ }
+  @media (min-width: 320px) {
+    #header-image {
+      height: 116px;
+      background-image: url("../images/mobile_version/bookbook-mobile_480.png"); } }
+  @media (min-width: 600px) {
+    #header-image {
+      height: 157px;
+      background-image: url("../images/mobile_version/bookbook-mobile_768.png"); } }
+  @media (min-width: 768px) {
+    #header-image {
+      height: 197px;
+      background-image: url("../images/mobile_version/bookbook-mobile_1024.png"); } }
+  @media (min-width: 1100px) {
+    #header-image {
+      height: 197px;
+      background-image: url("../images/mobile_version/bookbook-mobile_1600.png"); } }
 
 #page-content-wrapper {
   padding-top: 45px; }
