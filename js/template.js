@@ -1,40 +1,43 @@
+var $wrapper = jQuery(".wrapper")
+var $body = jQuery("body")
+var $sidenavOverlay = jQuery("#sidenav-overlay")
+
 var toggleSidenav = function () {
-    jQuery(".wrapper").toggleClass("toggled");
-    jQuery("body").toggleClass("noscroll");
-    jQuery("#sidenav-overlay").toggleClass("hidden-animated");	
+    $wrapper.toggleClass("toggled");
+    $body.toggleClass("noscroll");
+    $sidenavOverlay.toggleClass("hidden-animated");	
 }
 
 jQuery("#menu-toggle").click(function(e) {
 	toggleSidenav();
  });
 
- jQuery('.sidebar-dropdown-toggle').on('click', function () {
-   var toggle = jQuery(this);
-  
-   toggle.siblings('.sidebar-dropdown-menu').first().toggleClass('open');
- });
+jQuery('.sidebar-dropdown-toggle').on('click', function () {
+	var toggle = jQuery(this);
+	toggle.siblings('.sidebar-dropdown-menu').first().toggleClass('open');
+});
 
-jQuery('#sidenav-overlay').on('click' , function () {
+$sidenavOverlay.on('click' , function () {
 	toggleSidenav();
 });
 
 
-
-// jQuery(".drag-target").hammer({
-// prevent_default: false
-// }).bind('pan', function(e) {
-// 	console.log(e);
-// });
-var dragTarget = new Hammer(document.getElementById("drag-target"));
+// Touch events
+//var dragTarget = new Hammer(document.getElementById("drag-target"));
+var dragTarget = new Hammer.Manager(document.getElementById("drag-target"));
+dragTarget.add( new Hammer.Pan({ threshold: 200 }) );
 dragTarget.on("panend", function(ev) {
     if (ev.direction == 4) {
-    	toggleSidenav();
+    	toggleSidenav();	
     }
 });
 
-var overlay = new Hammer(document.getElementById("sidenav-overlay"));
+//var overlay = new Hammer(document.getElementById("sidenav-overlay"));
+var overlay = new Hammer.Manager(document.getElementById("sidenav-overlay"));
+overlay.add( new Hammer.Pan({ threshold: 60 }) );
 overlay.on("panend", function(ev) {
 	if (ev.direction == 2) {
 		toggleSidenav();
 	}
 });
+
