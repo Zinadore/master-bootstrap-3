@@ -17,3 +17,24 @@ jQuery("#menu-toggle").click(function(e) {
 jQuery('#sidenav-overlay').on('click' , function () {
 	toggleSidenav();
 });
+
+
+
+// jQuery(".drag-target").hammer({
+// prevent_default: false
+// }).bind('pan', function(e) {
+// 	console.log(e);
+// });
+var dragTarget = new Hammer(document.getElementById("drag-target"));
+dragTarget.on("panend", function(ev) {
+    if (ev.direction == 4) {
+    	toggleSidenav();
+    }
+});
+
+var overlay = new Hammer(document.getElementById("sidenav-overlay"));
+overlay.on("panend", function(ev) {
+	if (ev.direction == 2) {
+		toggleSidenav();
+	}
+});
