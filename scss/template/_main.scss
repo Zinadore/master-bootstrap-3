@@ -55,3 +55,13 @@ p.readmore > a {
 #page-content-wrapper {
 	padding-top: $navbar-height;
 }
+
+// make content centered in bigger than 1024 resolution
+#page-content-wrapper > .container {
+
+	@media (min-width: 992px) { 
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+}
