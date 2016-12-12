@@ -30,10 +30,13 @@ include 'includes/params.php';
           <jdoc:include type="component" /> <!-- main content -->
 
           <div class="editors-choice">
-            <jdoc:include type="modules" name="EditorsChoice" /> <!--replace with our own-->
+            <jdoc:include type="modules" name="editors-choice" /> 
           </div>
-  	      <jdoc:include type="modules" name="mostVisitedArticle" /> <!--replace with our own-->
-	    </div>
+
+          <div class="most-visited-article">
+  	      <jdoc:include type="modules" name="most-visited-article" /> 
+          </div>
+      </div>
 
       <!-- The dark overlay shown when side menu is open-->
 	    <div id="sidenav-overlay" class="hidden-animated"></div> 
