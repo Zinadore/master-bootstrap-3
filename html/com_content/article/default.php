@@ -19,7 +19,6 @@ $canEdit	= $this->item->params->get('access-edit');
 $user		= JFactory::getUser();
 
 ?>
-<h1>poutsogria</h1>
 <div class="item-page<?php echo $this->pageclass_sfx?>">
 <?php if ($this->params->get('show_page_heading')) : ?>
 	<h1>
