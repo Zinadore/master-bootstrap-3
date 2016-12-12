@@ -29,14 +29,16 @@ include 'includes/params.php';
       <div class="container">
           <jdoc:include type="component" /> <!-- main content -->
 
-          <div class="editors-choice">
-            <jdoc:include type="modules" name="editors-choice" /> 
-          </div>
+          <div class="editors-choice-most-visited-row">
+            <div class="editors-choice">
+              <jdoc:include type="modules" name="editors-choice" /> 
+            </div>
 
-          <div class="most-visited-article">
-  	      <jdoc:include type="modules" name="most-visited-article" /> 
+            <div class="most-visited-article">
+              <jdoc:include type="modules" name="most-visited-article" /> 
+            </div>
           </div>
-      </div>
+      </div> <!--container-->
 
       <!-- The dark overlay shown when side menu is open-->
 	    <div id="sidenav-overlay" class="hidden-animated"></div> 

@@ -66,9 +66,22 @@ p.readmore > a {
 	}
 }
 
-.editors-choice {
+.editors-choice-most-visited-row {
+	@extend .row;
+
+	img {
+		@extend .img-responsive;
+	}
+}
+
+.editors-choice, .most-visited-article {
 	@extend .col-md-6;
 	@extend .col-lg-6;
 	@extend .col-sm-12;
 	@extend .col-xs-12;
+
+	img {
+	    height: 128px !important;
+	    width: 100% !important;
+	}
 }
