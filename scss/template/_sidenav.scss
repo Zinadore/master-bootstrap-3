@@ -36,6 +36,11 @@
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     font-size: $sidebar-font-size;
+
+    & > .sidebar-nav {
+        padding-top: $navbar-height;
+
+    }
 }
 
 #wrapper.toggled #sidebar-wrapper {
