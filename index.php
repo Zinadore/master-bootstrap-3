@@ -40,6 +40,9 @@ include 'includes/params.php';
             </div>
           </div> <!--.editors-choice-most-visited-row-->
 
+          <div class="banners">
+            <jdoc:include type="modules" name="banners"/>
+          </div>
           <jdoc:include type="modules" name="social-buttons"/>
       </div> <!--.container-->
 

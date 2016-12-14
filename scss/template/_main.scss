@@ -127,3 +127,18 @@ p.readmore > a {
 		@extend .col-lg-3;		
 	}
 }
+
+.banners {
+	@extend .row;
+
+	& > .custom {
+		@extend .col-xs-6;
+		@extend .col-sm-4;
+		@extend .col-md-3;
+		@extend .col-lg-3;
+
+		img {
+			@extend .img-responsive;
+		}
+	}
+}
