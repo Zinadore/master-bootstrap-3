@@ -1085,7 +1085,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive, div.blog-featured img {
+.img-responsive, div.blog-featured img, .articleBodyPotato img {
   display: block;
   max-width: 100%;
   height: auto; }
@@ -6101,3 +6101,8 @@ span.siteRoot {
   display: none; }
 
 /*---END K2 Rating Styles ---*/
+.pager {
+  display: none; }
+
+.articleBodyPotato table {
+  max-width: 100%; }
