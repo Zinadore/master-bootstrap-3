@@ -84,4 +84,14 @@ p.readmore > a {
 	    height: 128px !important;
 	    width: 100% !important;
 	}
+
+	.custom > h4 {
+		text-align: center;
+    	font-size: $most-visited-editors-choice-headers-font-size;
+    	background-color: black;
+    	color: white;
+    	margin: 0;
+    	padding: 4px 0;	
+    	margin-bottom: 5px;	
+	}
 }
