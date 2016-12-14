@@ -6118,18 +6118,19 @@ p.readmore > a {
     margin-left: 15%;
     margin-right: 15%; } }
 
-.editors-choice img, .most-visited-article img {
-  height: 128px !important;
-  width: 100% !important; }
-
-.editors-choice .custom > h4, .most-visited-article .custom > h4 {
-  text-align: center;
-  font-size: 0.75rem;
-  background-color: black;
-  color: white;
-  margin: 0;
-  padding: 4px 0;
-  margin-bottom: 5px; }
+.editors-choice, .most-visited-article {
+  margin-bottom: 10px; }
+  .editors-choice img, .most-visited-article img {
+    height: 128px !important;
+    width: 100% !important; }
+  .editors-choice .custom > h4, .most-visited-article .custom > h4 {
+    text-align: center;
+    font-size: 0.75rem;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 4px 0;
+    margin-bottom: 5px; }
 
 .flexbox {
   display: flex;
