@@ -36,6 +36,7 @@
 		<position>debug</position>
 		<position>editors-choice</position>
 		<position>most-visited-article</position>
+		<position>social-buttons</position>
 	</positions>
 	<config>
 		<fields name="params">

@@ -7,13 +7,25 @@ body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+a {
+	&:link, &:visited {
+		color: #933020;
+		text-decoration: none;
+	}
+
+	&:hover {
+		color: #e0482f;
+    	text-decoration: none;		
+	}
+}
+
 div.blog-featured {
 	img {
 		@extend .img-responsive;
 
 		width: 100%;
 	}
-	
+
 	margin-bottom: 30px;
 }
 
@@ -102,5 +114,16 @@ p.readmore > a {
     	margin: 0;
     	padding: 4px 0;	
     	margin-bottom: 5px;	
+	}
+}
+
+.custom-social-buttons {
+	@extend .row;
+
+	.icon-wrapper {
+		@extend .col-xs-3;
+		@extend .col-sm-3;
+		@extend .col-md-3;
+		@extend .col-lg-3;		
 	}
 }
