@@ -1,11 +1,20 @@
 html {
 	font-size: 16px;
+	//font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-div.blog-featured img {
-	@extend .img-responsive;
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
 
-	width: 100%;
+div.blog-featured {
+	img {
+		@extend .img-responsive;
+
+		width: 100%;
+	}
+	
+	margin-bottom: 30px;
 }
 
 p.readmore > a {

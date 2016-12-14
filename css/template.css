@@ -6057,8 +6057,13 @@ header.affix > img#navbar-logo {
 html {
   font-size: 16px; }
 
-div.blog-featured img {
-  width: 100%; }
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+div.blog-featured {
+  margin-bottom: 30px; }
+  div.blog-featured img {
+    width: 100%; }
 
 p.readmore > a {
   white-space: normal;
