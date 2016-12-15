@@ -157,7 +157,7 @@ gulp.task('watch:sass',
 gulp.task('watch:scripts',
 	function() {
 		gulp.watch([
-			extPath + '/js/template.js'
+			extPath + '/js/**/*.js'
 			],
 			['scripts']
 		);

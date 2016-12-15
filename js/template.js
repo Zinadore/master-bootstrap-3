@@ -5,17 +5,12 @@ var $sidenavOverlay = jQuery("#sidenav-overlay")
 var toggleSidenav = function () {
     $wrapper.toggleClass("toggled");
     $body.toggleClass("noscroll");
-    $sidenavOverlay.toggleClass("hidden-animated");	
+    $sidenavOverlay.toggleClass("hidden-animated");
 }
 
 jQuery("#menu-toggle").click(function(e) {
 	toggleSidenav();
  });
-
-jQuery('.sidebar-dropdown-toggle').on('click', function () {
-	var toggle = jQuery(this);
-	toggle.siblings('.sidebar-dropdown-menu').first().toggleClass('open');
-});
 
 $sidenavOverlay.on('click' , function () {
 	toggleSidenav();
@@ -28,7 +23,7 @@ var dragTarget = new Hammer.Manager(document.getElementById("drag-target"));
 dragTarget.add( new Hammer.Pan({ threshold: 200 }) );
 dragTarget.on("panend", function(ev) {
     if (ev.direction == 4) {
-    	toggleSidenav();	
+    	toggleSidenav();
     }
 });
 
@@ -40,4 +35,3 @@ overlay.on("panend", function(ev) {
 		toggleSidenav();
 	}
 });
-
