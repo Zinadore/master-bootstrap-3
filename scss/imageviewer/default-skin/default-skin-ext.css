@@ -1,0 +1,36 @@
+.pswp__caption__center {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.pswp__button,
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before {
+  background: url(default-skin.png) 0 0 no-repeat;
+  background-size: 396px 132px;
+  width: 66px;
+  height: 66px; }
+ 
+.pswp__button--close {
+  background-position: 0 -66px; }
+
+.pswp__button--share {
+  background-position: -66px -66px; } 
+  
+.pswp--fs .pswp__button--fs {
+  background-position: -66px 0; }
+  
+ .pswp__button--zoom {
+  display: none;
+  background-position: -121px 0; }
+
+
+.pswp--zoomed-in .pswp__button--zoom {
+  background-position: -165px 0; }
+  
+.pswp__top-bar {
+position: absolute;
+left: 0;
+top: 0;
+height: 66px;
+width: 100%; }

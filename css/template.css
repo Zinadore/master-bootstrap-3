@@ -5977,6 +5977,9 @@ p.readmore > a {
   margin-left: auto !important;
   margin-right: auto !important; }
 
+.item_content {
+  margin: 2% 0; }
+
 .item_title {
   font-size: 1.7rem;
   text-align: center;
@@ -6006,14 +6009,24 @@ p.readmore > a {
   .badge_loved {
     margin-top: 1.5rem; } }
 
+.badge_loved img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 .ruler {
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }
 
-.actions_list .list_button {
-  margin: 0 auto;
-  display: inline; }
+.actions_list {
+  margin: 2% 0;
+  padding: 5px 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid; }
+  .actions_list .list_button {
+    margin: 0 auto;
+    display: inline; }
 
 .social_buttons {
   margin: 10px 0; }

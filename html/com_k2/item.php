@@ -1,19 +1,19 @@
 <?php
-/**
- * @version		$Id: item.php 1812 2016-11-12 12:05 athan.doulgeris $
- * @package		K2
- * @author		JoomlaWorks http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
- * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
-// no direct access
-defined('_JEXEC') or die;
+	/**
+	* @version		$Id: item.php 1812 2016-11-12 12:05 athan.doulgeris $
+	* @package		K2
+	* @author		JoomlaWorks http://www.joomlaworks.net
+	* @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
+	* @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+	*/
+	// no direct access
+	defined('_JEXEC') or die;
 
-$doc = JFactory::getDocument();
-//  load JS for twitter's button
-if($this->item->params->get('itemTwitterButton',1)) {
-	$doc->addScript("//platform.twitter.com/widgets.js");
-}
+	$doc = JFactory::getDocument();
+	//  load JS for twitter's button
+	if($this->item->params->get('itemTwitterButton',1)) {
+		$doc->addScript("//platform.twitter.com/widgets.js");
+	}
 ?>
 
 <?php if(JRequest::getInt('print')==1): ?>
@@ -112,6 +112,10 @@ if($this->item->params->get('itemTwitterButton',1)) {
 								<!--If the field has a value
 								We parse the value, because it is in the form of an ancor tag (href)
 								We only keep the text between the tag -->
+								<?php if (($extraField->name == "Δείτε το βιβλίο") && (strpos($extraField->value, "index.php?option=com_flippingbook") == true) ||(($extraField->name == "Απόσμασμα 1")&&(htmlspecialchars($extraField->value) !== ''))): ?>
+									<?php $to_read_or_listen_exists = true; ?>
+								<?php endif;?>
+
 								<?php preg_match('~>\K[^<>]*(?=<)~', $extraField->value, $useful_value); ?>
 								<?php if ($extraField->name == "Συγγραφέας" && ($useful_value[0] !== "http://")): ?>
 									<li id="author_info" class="info_item" itemprop="author">
@@ -251,7 +255,7 @@ if($this->item->params->get('itemTwitterButton',1)) {
 			<?php endif; ?>
 			<?php if($hasExtra): ?>
 				<?php foreach ($this->item->extra_fields as $key => $extraField): ?>
-					<?php if (($extraField->name == "Το αγαπήσαμε") && ($extraField->value !== "Ναι")): ?>
+					<?php if (($extraField->name == "Το αγαπήσαμε") && ($extraField->value == "Ναι")): ?>
 						<?php $has_audio = true; ?>
 						<div class="badge_loved col-xs-6">
 							<?php echo ("<img alt='Το αγαπήσαμε' src='/images/books_icons/to_agapisame_main.png' />"); ?>
@@ -263,30 +267,36 @@ if($this->item->params->get('itemTwitterButton',1)) {
 	</div>
 	<!-- END OF ITEM RATING ROW -->
 
-	<!--ITEM ACTIONS ROW-->
+	<!--ITEM READ & LISTEN ACTIONS ROW-->
+	<?php if($to_read_or_listen_exists):?>
 	<div class="item_actions row">
 		<?php if($hasExtra): ?>
-			<hr class="ruler">
 				<div class="actions_list flexbox">
 					<?php foreach ($this->item->extra_fields as $key => $extraField): ?>
 						<?php if ($extraField->value): ?>
 							<?php preg_match('~>\K[^<>]*(?=<)~', $extraField->value, $useful_value); ?>
-							<?php if (($extraField->name == "Δείτε το βιβλίο") && (strpos($extraField->value, "index.php?option=com_flippingbook") == false)): ?>
-								<?php preg_match('/(?<=id=)\d+/', $link, $result); ?>
+							<?php if (($extraField->name == "Δείτε το βιβλίο") && (strpos($extraField->value, "index.php?option=com_flippingbook") == true)): ?>
 								<div id="view_button" class="list_button col-xs-6">
-									<a href="#" id="view_button_link">
+									<a href="#" class="view_button_link" id="btn">
 										<?php echo ("<img class='img_resp center_block' alt='Ξεφυλλίστε το βιβλίο' src='/images/books_icons/deite_to_biblio_main.png' Title='Ξεφυλλίστε τις πρώτες σελίδες του βιβλίου'/>"); ?>
 									</a>
 								</div>
-								<div id="listen_button" class="list_button col-xs-6">
-									<a href="#" id="view_button_link">
-										<?php echo ("<img class='img_resp center_block' alt='Ακούστε το βιβλίο' src='/images/books_icons/listen_main.png' />"); ?>
-									</a>
-								</div>
+								<?php
+									$doc->addStyleSheet(JURI::root(true).'/templates/bookbookmobile/scss/imageviewer/photoswipe.css');
+									$doc->addStyleSheet(JURI::root(true).'/templates/bookbookmobile/scss/imageviewer/default-skin/default-skin.css');
+									$doc->addStyleSheet(JURI::root(true).'/templates/bookbookmobile/scss/imageviewer/default-skin/default-skin-ext.css');
+									$doc->addScript(JURI::root(true).'/templates/bookbookmobile/js/imageviewer/photoswipe.min.js');
+									$doc->addScript(JURI::root(true).'/templates/bookbookmobile/js/imageviewer/photoswipe-ui-default.min.js');
+									$doc->addScript(JURI::root(true).'/templates/bookbookmobile/js/imageviewer/index.js');
+									 if(preg_match('/(?<=id=)\d+/', htmlspecialchars($extraField->value), $book_id) === 1){
+										 loadBookComponents();
+										 echo '<script>var book_link_array = '.json_encode(pagesLoader($book_id[0])) .';</script>';
+									 }									
+								 ?><!--WRITE FOREACH HERE TO CHECK WHERE TO FIND THE ID FOR THE BOOK GAMW -->
 							<?php elseif (($extraField->name == "Απόσμασμα 1") ): ?>
 								<?php if ((htmlspecialchars($extraField->value) !== '')): ?>
 									<div id="listen_button" class="list_button col-xs-6">
-										<a href="#" id="view_button_link">
+										<a href="#" class="view_button_link">
 											<?php echo ("<img class='img_resp center_block' alt='Ακούστε το βιβλίο' src='/images/books_icons/listen_main.png' />"); ?>
 										</a>
 									</div>
@@ -295,13 +305,68 @@ if($this->item->params->get('itemTwitterButton',1)) {
 						<?php endif; ?>
 					<?php endforeach; ?>
 				</div>
-			<hr class="ruler">
 		<?php endif; ?>
 	</div>
-	<!--END OF ITEM ACTIONS ROW-->
+	<?php endif; ?>
+	<!--END OF ITEM READ & LISTEN ACTIONS ROW-->
+<!--DANGER!!!-->
+<?php 
+	function loadBookComponents(){
+		echo '
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
+			<div class="pswp__bg">
+			</div>
+
+			<div class="pswp__scroll-wrap">
+
+				<div class="pswp__container">
+					<div class="pswp__item">
+					</div>
+					<div class="pswp__item">
+					</div>
+					<div class="pswp__item">
+					</div>
+				</div>
+
+				<div class="pswp__ui pswp__ui--hidden">
+
+				<div class="pswp__top-bar">
+
+				<div class="pswp__counter"></div>
+
+				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div> 
+			</div>
+
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+
+			</div>
+
+			</div>
+
+		</div>';
+	}
+?>
 	<?php
-		function pagesLoader($book_id) {
+		function pagesLoader($book) {
     		// Get a db connection.
 			$db = JFactory::getDbo();
 
@@ -312,7 +377,7 @@ if($this->item->params->get('itemTwitterButton',1)) {
 			// Order it by the ordering field.
 			$query->select($db->quoteName(array('file')));
 			$query->from($db->quoteName('j25_flippingbook_pages'));
-			$query->where($db->quoteName('book_id') . '= 461');
+			$query->where($db->quoteName('book_id') . '= '. $book);
 
 			// Reset the query using our newly populated query object.
 			$db->setQuery($query);
