@@ -1,0 +1,11 @@
+.pager {
+    display: none;
+}
+
+.articleBodyPotato img {
+    @extend .img-responsive;
+}
+
+.articleBodyPotato table {
+    max-width: 100%;
+}
