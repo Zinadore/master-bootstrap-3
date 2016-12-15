@@ -18,27 +18,29 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 250px;
+    left: $sidebar-width;//250px;
     width: 0;
     height: 100%;
-    margin-left: -250px;
+    margin-left: -$sidebar-width;//-250px;
     overflow-y: auto;
-    background: #000;
+    background: white;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    font-size: $sidebar-font-size;
+
+    & > .sidebar-nav {
+        padding-top: $navbar-height;
+
+    }
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: $sidebar-width;//250px;
 }
 
 #page-content-wrapper {
@@ -49,7 +51,7 @@
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-right: -$sidebar-width;//-250px;
 }
 
 /* Sidebar Styles */
@@ -57,26 +59,43 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: $sidebar-width;//250px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
+    //text-indent: 20px;
+    line-height: $sidebar-li-line-height;
+}
+
+.sidebar-nav > li:before   {
+    content: "•";
+    color: red;
+    font-size: $sidebar-font-size-circles;
+    position: absolute;
+    left: 16px;
+}
+
+ul.sidebar-dropdown-menu > li:before {
+    content: "•";
+    color: red;
+    font-size: $sidebar-font-size-circles;
+    position: absolute;
+    left: 34px;
 }
 
 .sidebar-nav li a {
-    display: block;
+    //display: block;
     text-decoration: none;
-    color: #999999;
+    color: black;
+    padding-left: 40px;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: $sidebar-links-color-hover;
     background: rgba(255,255,255,0.2);
 }
 
@@ -92,17 +111,17 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: black;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: $sidebar-links-color-hover;
     background: none;
 }
 
 @media(min-width: 5000px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: $sidebar-width;//250px;
     }
 
     #wrapper.toggled {
@@ -110,7 +129,7 @@
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: $sidebar-width;  //250px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -129,15 +148,59 @@
 
 .sidebar-dropdown-menu {
   list-style-type: none;
-  background-color: lighten(#000, 10);
-  padding-left: 0.8em;
-  height: 100%;
-  max-height: 0%;
-  overflow-y: hidden;
-  transition: max-height 350ms ease-in-out;
+}
 
-  &.open {
-    max-height: 100%;
-    overflow-y: visible;
-  }
+#sidenav-overlay {
+    position: fixed;
+    top: $navbar-height; // found in template/variables
+    left: 0;
+    right: 0;
+    height: 120vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 997;
+    will-change: opacity;
+    opacity: 100%;
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
+
+#sidenav-overlay.hidden-animated {
+    opacity: 0;
+    height: 0;
+}
+
+
+#wrapper.toggled > nav#sidebar-wrapper {
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 40px 30px 5px rgba(0,0,0,0.12),0 8px 10px -5px rgba(0,0,0,0.3);
+}
+
+.drag-target {
+    height: 100%;
+    width: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 998;
+}
+
+// Different colors for circles
+ul.sidebar-nav {
+
+    li.item-128:before { color: #c90119; }
+
+    li.item-129:before { color: #edba00; }
+
+    li.item-130:before { color: #137aae; }
+
+    li.item-131:before { color: #5504b2; }  // biblia pou...
+
+    li.item-131 > ul.sidebar-dropdown-menu {
+
+        & > li.item-132:before { color: #b3007b; } // biblia pou diavazontai
+        & > li.item-133:before { color: #e64215; } // biblia pou akougontai
+        & > li.item-134:before { color: #b3007b; } // biblia pou ksefilizontai
+        & > li.item-135:before { color: #7cb4d6; } // biblia pou ksexarisame
+        & > li.item-136:before { color: #97b801; } // biblia pou agapisame
+    }
 }

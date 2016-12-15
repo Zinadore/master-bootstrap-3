@@ -24,6 +24,8 @@
 	// $doc->addScript('templates/' . $this->template . '/js/headroom.min.js');
 	// $doc->addScript('templates/' . $this->template . '/js/jquery-3.1.1.min.js');
 	$doc->addScript('templates/' . $this->template . '/js/bootstrap.min.js');
+	$doc->addScript('templates/' . $this->template . '/js/hammer.min.js');
+	$doc->addScript('templates/' . $this->template . '/js/hammer-time.min.js');
 	// $doc->addScript(JURI::root(true).'/media/system/js/mootools-core.js');
 	// $doc->addScript(JURI::root(true).'/media/system/js/core.js');
 	// $doc->addScript(JURI::root(true).'/media/system/js/mootools-more.js');

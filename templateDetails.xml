@@ -34,6 +34,10 @@
     <positions>
 		<position>sidenav-menu</position>
 		<position>debug</position>
+		<position>editors-choice</position>
+		<position>most-visited-article</position>
+		<position>social-buttons</position>
+		<position>banners</position>
 	</positions>
 	<config>
 		<fields name="params">
