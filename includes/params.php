@@ -64,13 +64,13 @@
 	if ($modernizr == 1){
 		$doc->addScript($tpath . '/js/modernizr-2.8.3.js');
 	}
-	if ($materialdesign == 1){
-	$doc->addScript($tpath . '/js/material.min.js');
-	}
-	// Add stylesheets
-	if ($fontawesome == 1){
-		$doc->addStyleSheet($tpath . '/css/font-awesome.min.css');
-	}
-	if ($materialdesign == 1){
-	$doc->addStyleSheet($tpath . '/css/material.min.css');
-	}
+	// if ($materialdesign == 1){
+	// $doc->addScript($tpath . '/js/material.min.js');
+	// }
+	// // Add stylesheets
+	// if ($fontawesome == 1){
+	// 	$doc->addStyleSheet($tpath . '/css/font-awesome.min.css');
+	// }
+	// if ($materialdesign == 1){
+	// $doc->addStyleSheet($tpath . '/css/material.min.css');
+	// }
